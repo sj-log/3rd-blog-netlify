@@ -4,7 +4,7 @@
   # Directory to change to before starting a build.
   # This is where we will look for package.json/.nvmrc/etc.
   command = "npm run build"
-  publish="path-to-react-app/build"
+
   base = "path-to-react-app"
 
   # Directory (relative to root of your repo) that contains the deploy-ready
