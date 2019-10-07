@@ -40,6 +40,12 @@ export default class App extends React.Component {
                         </Route>
                         <Route path="/long-thought/:title" render={props => <LongThought {...props} />}>
                         </Route>
+                        <Route path="/portfolio">
+                        <div><h1>Still in processing.</h1></div>
+                        </Route>
+                        <Route path="/book-review" >
+                        <div><h1>Still in processing.</h1></div>
+                        </Route>
 
                     </Switch>
                 </div>
