@@ -3,7 +3,6 @@
 [build]
   # Directory to change to before starting a build.
   # This is where we will look for package.json/.nvmrc/etc.
-  command = "npm run build"
 
   base = "path-to-react-app"
 
