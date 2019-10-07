@@ -1,0 +1,96 @@
+@import "variables.scss";
+
+.logo {
+    @include logo;
+}
+
+.App {
+    height: 100vh;
+
+    // go grid under all components
+    // display: grid;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    // grid-template-rows: 10% 70% 20%;
+    .header {
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+
+    // align-items: center;
+
+    .application {
+        display: none;
+    }
+
+    * > a {
+        text-decoration: none;
+        color: $basicFontColor;
+    }
+
+    .body-section {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        .img-section {
+            display: inline-block;
+            overflow: hidden;
+            img {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+        }
+        .text-section {
+            margin: auto 0;
+            display: inline-block;
+            .read-more {
+                border: 1px solid black;
+                padding: $goldenRate;
+                background: none;
+            }
+        }
+
+    }
+
+    .nav {
+        align-items: center;
+        grid-column: 2;
+        ul {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            // vertically middle - align item:center
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        li {
+            padding: $goldenRate/2;
+            font-family: $fontRailWay;
+            display: inline-block;
+        }
+    }
+
+    .posts-container {
+        @include body;
+        column-count: 3;
+        column-gap: 0;
+    }
+
+    .post-blocks {
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid black;
+    }
+
+    .post-card{
+        text-align: left;
+        margin: 0 auto;
+        width: 50vw;
+        img{
+            position: relative;
+            width: 50vw;
+        }
+    }
+}
