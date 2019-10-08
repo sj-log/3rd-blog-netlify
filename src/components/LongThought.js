@@ -39,7 +39,6 @@ class LongThought extends React.Component {
                     .data
                     console
                     .log('loadFrontmatter', loadFrontmatter)
-                // console.log(data.layout, data.thumbnail , data.title)
                 this.setState({
                     md: loadMd.content,
                     frontmatter: {

@@ -36,7 +36,7 @@ export default class App extends React.Component {
                         <Route path="/small-thought">
                             <SmallThought></SmallThought>
                         </Route>
-                        <Route exact path="/long-thought" render={LongThoughts}>
+                        <Route exact path="/long-thought" render={props => <LongThoughts {...props} />}>
                         </Route>
                         <Route path="/long-thought/:title" render={props => <LongThought {...props} />}>
                         </Route>
