@@ -4,6 +4,10 @@
     @include logo;
 }
 
+*{
+    scrollbar-width: thin;
+}
+
 .App {
     height: 100vh;
 
@@ -79,21 +83,35 @@
     }
 
     .post-blocks {
+        height: 150px;
+        padding: $goldenRate;
         margin: 0;
         overflow: hidden;
         border: 1px solid black;
     }
 
-    .post-card{
+    .post-card {
         text-align: left;
         margin: 0 auto;
         width: 50vw;
-        img{
+        img {
             position: relative;
             width: 50vw;
         }
-        pre{
-            overflow:scroll;
+        pre {
+            overflow: auto;
+            
+        }
+        .badge {
+            box-sizing: content-box;
+            display: table-cell;
+            padding: 0.2rem;
+            vertical-align: middle;
+            border-radius: 20%;
+        }
+        .pink {
+            background-color: peachpuff;
+
         }
     }
 }

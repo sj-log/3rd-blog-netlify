@@ -10,24 +10,23 @@ const LongThought = (props) => {
             {
 
                 markdownFiles.map((md, i) => {
-        
-                   
+
                     var ns = md.substring(md.lastIndexOf('/') + 1)
                     var hn = ns.split(".")[0];
-                    var dehypen = hn.replace(/-/gi, ' ') 
+                    var dehypen = hn.replace(/-/gi, ' ')
                     var title = dehypen.substring(11)
-                    
+
                     console.log(hn)
-                    
-                    console.log( title)
-                  
+
+                    console.log(title)
 
                     return (
-                    <article className={'post-blocks' +i} >
-                    <Link to={`${props.match.url}/${hn}`}  >
-                        {title}
-                    </Link>
-                    </article>)
+                        <Link to={`${props.match.url}/${hn}`}>
+                            <article className={'post-blocks ' + i}>
+                                {title}
+                            </article>
+                        </Link>
+                    )
                 })
             }
         </div>

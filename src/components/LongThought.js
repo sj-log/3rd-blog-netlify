@@ -1,5 +1,6 @@
 import React from 'react'
 import Disqus from 'disqus-react';
+import * as matter from 'gray-matter';
 
 // remark-react libraries 3
 import MarkdownReact from 'react-markdown';
@@ -9,7 +10,16 @@ class LongThought extends React.Component {
         super(props)
         this.state = {
             md: null,
-            title: props.match.params.title
+            title: props.match.params.title,
+            frontmatter: {
+                layout: null,
+                thumbnail: null,
+                title: null,
+                category: null,
+                date: null,
+                comments: null
+
+            }
         }
     }
 
@@ -19,40 +29,60 @@ class LongThought extends React.Component {
         const mdr = require(`../posts/${postTitle}.md`)
         console.log(mdr)
 
+        // markdown file to text then, put into state
         fetch(mdr)
             .then((res) => res.text())
             .then(text => {
-                this.setState({md: text})
+                var loadMd = matter(text)
+                console.log('loadMd', loadMd)
+                var loadFrontmatter = loadMd
+                    .data
+                    console
+                    .log('loadFrontmatter', loadFrontmatter)
+                // console.log(data.layout, data.thumbnail , data.title)
+                this.setState({
+                    md: loadMd.content,
+                    frontmatter: {
+                        layout: loadFrontmatter.layout,
+                        category: loadFrontmatter.category,
+                        date: loadFrontmatter.date,
+                        thumbnail: loadFrontmatter.thumbnail,
+                        title: loadFrontmatter.title,
+                        comments: loadFrontmatter.comments
+                    }
+                })
             })
+
     }
 
     render() {
-        const {md} = this.state;
+        const {md, frontmatter} = this.state;
         console.log(this.props)
-
+        console.log(this.state.frontmatter)
         // disqus init
         const disqusShortname = 'ollagada';
-        // const disqusConfig = {
-        //     url: this.props.article.url,
-        //     identifier: this.props.article.id,
-        //     title: this.props.article.title,
-        // };
- 
-
+        // const disqusConfig = {     url: this.props.article.url,     identifier:
+        // this.props.article.id,     title: this.props.article.title, };
 
         return (
             <div className='post-card'>
-                <MarkdownReact source={md}></MarkdownReact>
+                <header>
+                    <h1>{frontmatter.title}</h1>
+                    {/* <span className="badge pink">{frontmatter.category}</span> */}
+                    {/* <date>{frontmatter.date}</date> */}
+                </header>
+                    <MarkdownReact source={md}></MarkdownReact>
                 {/* <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
                     Comments
                 </Disqus.CommentCount>
-                <Disqus.CommentEmbed 
+                <Disqus.CommentEmbed
                     commentId={this.props.article.featuredComment}
                     showMedia={true}
                     height={160}
                 />
-                
-                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /> */}
+
+                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /> */
+                }
             </div>
         )
     }
