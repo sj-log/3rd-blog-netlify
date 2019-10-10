@@ -13,73 +13,90 @@ const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
 export default class LongThoughts extends React.Component {
     constructor() {
         super()
-
         this.state = {
-            titles: null,
-            thumbnails: null,
-            dates: null,
-            category:null,
-            tags:null,
+            posts: []
         }
+
     }
 
     componentDidMount() {
+        // shallow state.posts
+        var shallowPosts
+        markdownFiles.map(async (md, i) => {
+            var distracting = await fetch(md).then(async (res) => {
 
-        markdownFiles.map((md) => {
-            fetch(md).then((res)=>
-                // for getting the titles > substrings > 
-                {   console.log('res',res)
-                    // response > response.url to substring
-                    var mdUrl = decodeURI(res.url)
-                    console.log(mdUrl)
-                    var ns = mdUrl.substring(mdUrl.lastIndexOf('/') + 1)
-                    var hn = ns.split(".")[0];
-                    var dehypen = hn.replace(/-/gi, ' ')
-                    var title = dehypen.substring(11)
-                    console.log('title',title)
+                var url = decodeURI(res.url)
+                var ns = url.substring(url.lastIndexOf('/') + 1)
+                var hn = ns.split(".")[0];
+                var dehypen = hn.replace(/-/gi, ' ')
+                var title = dehypen.substring(11)
+                var path = hn
+                var fr = await res
+                    .text()
+                    .then((r) => {
+                        return r
+                    })
 
-                    return res.text()}
-).then((text)=>{
-               
-                // getFrontMatter Infos
-                var eachMdPosts = matter(text)
-                var postFrontMatters = eachMdPosts.data
-                // this.setState({dates: postFrontMatters.dates})
+                var frontmatter = matter(fr).data
 
-                console.log(postFrontMatters)
+                var parcel = {
+                    frontmatter,
+                    title,
+                    path
+                }
+                // console.log(parcel)
+                return parcel
+
             })
+
+            shallowPosts = this
+                .state
+                .posts
+                .slice();
+            shallowPosts.push(distracting)
+            this.setState({posts: shallowPosts})
         })
 
     }
 
-    render() {
-        var {
-            titles,
-            thumbnails,
-            dates
-        } = this.state;
-        return (<div className="posts-container"></div>)
+    shouldComponentUpdate(nextProps, nextState) {
+
+        // how to prevent rerender until whole amount posts get loaded?
+        //  then only updated(rerendering) when the post loading is done? length of post??
+        // wow.. this is working!!! I could stop the re-rendering! then,  I can make that opposite?? :D
+
+        var loaded = this.state.posts.length
+        var postCounts = markdownFiles.length
+        console.log(loaded, postCounts)
+
+        if (this.state.posts.length!==markdownFiles.length-1) { 
+            return false
+        } else {
+            return true
+        }
     }
-}
 
-/* {
-                markdownFiles.map((md, i) => {
+    render() {
+        console.log('call the whole state', this.state.posts)
 
-                    var ns = md.substring(md.lastIndexOf('/') + 1)
-                    var hn = ns.split(".")[0];
-                    var dehypen = hn.replace(/-/gi, ' ')
-                    var title = dehypen.substring(11)
-
-                    console.log(hn)
-
-                    console.log(title)
-
-                    return (
-                        <Link to={`${props.match.url}/${hn}`} key={i}>
-                            <article className={'post-blocks ' + i}>
-                                {title}
-                            </article>
+        const {posts} = this.state
+        return (
+            <div className="posts-container">
+                {
+                    posts.map(
+                        (post, i) => <Link
+                            to={this.props.match.url + '/' + post
+                                .path
+                                .replace(/ /gi, "-")}
+                            key={i}>
+                            <div
+                                style={{
+                                    backgroundImage: "url(" + post.frontmatter.thumbnail + ")"
+                                }}>{post.title}</div>
                         </Link>
                     )
-                })
-            } */
+                }
+            </div>
+        )
+    }
+}
