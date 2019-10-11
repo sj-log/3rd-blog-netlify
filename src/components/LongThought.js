@@ -1,5 +1,4 @@
 import React from 'react'
-import Disqus from 'disqus-react';
 import * as matter from 'gray-matter';
 
 // remark-react libraries 3
@@ -58,13 +57,7 @@ class LongThought extends React.Component {
         const {md, frontmatter} = this.state;
         console.log(this.props)
         console.log(this.state.frontmatter)
-        // disqus init
-        const disqusShortname = 'ollagada';
-        const disqusConfig = {
-            url: this.props.match.url,
-            identifier: this.props.location.id,
-            title: this.props.match.title
-        };
+        
 
    
         return (
@@ -76,15 +69,6 @@ class LongThought extends React.Component {
                     {/* <date>{frontmatter.date}</date> */}
                 </header>
                 <MarkdownReact source={md}></MarkdownReact>
-                <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
-                </Disqus.CommentCount>
-                <Disqus.CommentEmbed
-                    commentId={this.props.location.id}
-                    showMedia={true}
-                    height={160}
-                />
-
-                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
             </div>
         )
     }
