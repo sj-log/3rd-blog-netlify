@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Felipa&display=swap');
 @import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
 
 
-
+$fontNanumMyungjo : 'Nanum Myeongjo',sans-serif;
 $fontRailWay : 'Raleway', sans-serif;
 $goldenRate:1.1613rem;
 $basicFontColor:#4b4646;
+$subInfoColor :#80808075;
+
 @mixin body{
 width : 50vw;
 margin: 0 auto;

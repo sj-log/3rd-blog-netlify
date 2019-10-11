@@ -90,9 +90,11 @@ export default class LongThoughts extends React.Component {
     }
 
     render() {
-        const {posts, loading} = this.state
-        console.log('print out posts',posts)
-        
+        const {posts, loading} = this
+            .state
+            console
+            .log('print out posts', posts)
+
         // loading condition proc
         if (loading) {
             return <RenderingIcon></RenderingIcon>
@@ -107,14 +109,11 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                 key={i}>
-                                <div
-                                    className='post-link-frame'
-                                    // style={{
-                                    //     backgroundImage: "url(" + post.frontmatter.thumbnail + ")"
-                                    // }}
-                                    >
-                                        <img src={ post.frontmatter.thumbnail}></img>
-                                    <h4>{post.title}</h4>
+
+                                <div className='post-link-frame'>
+                                    <h3 className='numbering'>{i}</h3>
+                                    <img src={post.frontmatter.thumbnail}></img>
+                                    <h4 className='post-title'>{post.title}</h4>
                                 </div>
                             </Link>
 
