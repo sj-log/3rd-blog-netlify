@@ -60,28 +60,31 @@ class LongThought extends React.Component {
         console.log(this.state.frontmatter)
         // disqus init
         const disqusShortname = 'ollagada';
-        // const disqusConfig = {     url: this.props.article.url,     identifier:
-        // this.props.article.id,     title: this.props.article.title, };
+        const disqusConfig = {
+            url: this.props.match.url,
+            identifier: this.props.location.id,
+            title: this.props.match.title
+        };
 
+   
         return (
+            
             <div className='post-card'>
                 <header>
                     <h1>{frontmatter.title}</h1>
                     {/* <span className="badge pink">{frontmatter.category}</span> */}
                     {/* <date>{frontmatter.date}</date> */}
                 </header>
-                    <MarkdownReact source={md}></MarkdownReact>
-                {/* <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
-                    Comments
+                <MarkdownReact source={md}></MarkdownReact>
+                <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
                 </Disqus.CommentCount>
                 <Disqus.CommentEmbed
-                    commentId={this.props.article.featuredComment}
+                    commentId={this.props.location.id}
                     showMedia={true}
                     height={160}
                 />
 
-                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /> */
-                }
+                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
             </div>
         )
     }
