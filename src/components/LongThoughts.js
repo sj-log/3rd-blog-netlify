@@ -11,22 +11,24 @@ const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
     .sort()
     .reverse();
 
+
 export default class LongThoughts extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             loading: true,
-            posts: []
+            posts: [],
+            categories: []
         }
 
     }
 
     componentDidMount() {
-        // shallow state.posts
+        // distracting markdown information
 
         markdownFiles.map(async (md, i) => {
             var distracting = await fetch(md).then(async (res) => {
-                var loadingProgress = i / markdownFiles.length * 100
+                // var loadingProgress = i / markdownFiles.length * 100
                 var url = decodeURI(res.url)
                 var ns = url.substring(url.lastIndexOf('/') + 1)
                 var hn = ns.split(".")[0];
@@ -52,16 +54,45 @@ export default class LongThoughts extends React.Component {
 
             })
 
+            // make a shallow chunk of posts
             var shallowPosts = this
                 .state
                 .posts
                 .slice();
+
             shallowPosts.push(distracting)
+
+            // making categories
+            var uniq = new Set()
+
+            shallowPosts.map((post, i) => {
+                var el = post.frontmatter.category
+
+                switch (typeof el) {
+                    case 'object':
+                        el.map((e) => {
+                            uniq.add(e)
+                        })
+                        break
+
+                    case 'string':
+                        uniq.add(el)
+                        break
+                }
+
+            })
+
+            var setToArray = Array.from(uniq)
+
             // Need to be fixed, loading:false setState once, when last markdown file mapped
-            // done !just sending the false of loading in mapping
-            this.setState({posts: shallowPosts, loading: false})
+            // done !just sending the false of loading in mapping put distracted markdown
+            // title/frontmatter into shallow this.state.posts
+
+            this.setState({posts: shallowPosts, loading: false, categories: setToArray})
 
         })
+
+        // categoryMaker(this.state.posts)
 
     }
 
@@ -90,35 +121,48 @@ export default class LongThoughts extends React.Component {
     }
 
     render() {
-        const {posts, loading} = this
-            .state
-            console
-            .log('print out posts', posts)
+        const {posts, loading, categories} = this.state
+        const props = this
+            .props
+     
 
-        // loading condition proc
         if (loading) {
             return <RenderingIcon></RenderingIcon>
         } else {
             return (
                 <div className="posts-container">
-                    {
+                    <aside className="categories">
+                        {
+                            categories.map(
+                                (category, i) => <Link to={'categorized/' + category}>
+                                    <h4 className="category" key={i}>{category}</h4>
+                                </Link>
+                            )
+                        }
+                    </aside>
 
-                        posts.map(
-                            (post, i) => <Link
-                                to={this.props.match.url + '/' + post
-                                    .path
-                                    .replace(/ /gi, "-")}
-                                key={i}>
+                    <article className="posts">
+                        {
+                      
+                            posts.map((post, i) => {
+                                if (post.frontmatter.status == 'draft') {
+                                    return console.log('draft md file')
+                                } else {
+                                    return <Link
+                                        to={props.match.url + '/' + post
+                                            .path
+                                            .replace(/ /gi, "-")}>
 
-                                <div className='post-link-frame'>
-                                    <h3 className='numbering'>{i}</h3>
-                                    <img src={post.frontmatter.thumbnail}></img>
-                                    <h4 className='post-title'>{post.title}</h4>
-                                </div>
-                            </Link>
+                                        <div className='post-link-frame'>
+                                            <h3 className='numbering'>{i}</h3>
+                                            <img src={post.frontmatter.thumbnail}></img>
+                                            <h4 className='post-title'>{post.title}</h4>
+                                        </div>
+                                    </Link>
+                                }
+                            })
+                        }</article>
 
-                        )
-                    }
                 </div>
 
             )

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.6",
     "cross-env": "^6.0.3",
     "disqus-react": "^1.0.7",
     "front-matter": "^3.0.2",
@@ -47,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.6.2"
+    "@babel/preset-env": "^7.6.2",
+    "@fortawesome/fontawesome-free": "^5.11.2"
   }
 }
