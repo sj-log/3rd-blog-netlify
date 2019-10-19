@@ -2,6 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import * as matter from 'gray-matter';
 import RenderingIcon from './RenderingIcon'
+// import CategorizedPosts from './CategorizedPosts'
+import qs from 'query-string';
 
 const importAll = (r) => r
     .keys()
@@ -11,10 +13,12 @@ const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
     .sort()
     .reverse();
 
-
 export default class LongThoughts extends React.Component {
     constructor(props) {
         super(props)
+        console.log('0 constructor')
+
+        
         this.state = {
             loading: true,
             posts: [],
@@ -22,13 +26,54 @@ export default class LongThoughts extends React.Component {
         }
 
     }
+    shouldComponentUpdate() {
+        console.log('* shouldComponentUpdate')
 
-    componentDidMount() {
-        // distracting markdown information
+        // control center for re-render
 
+        if (this.state.posts.length !== markdownFiles.length - 1) {
+            // if still loading , do not rerender yet undefined == first open posts page, so
+            // let them loading first all posts
+            return false
+        } else {
+            console.log('post Load all done')
+            return true
+        }
+    }
+
+    componentWillReceiveProps(nextProps, prevProps, nextState, prevState) {
+        // when prevProps're changed
+        console.log('3 componentWillReceiveProps')
+
+        console.log(
+            1,
+            'prevSearch',
+            prevProps.location,
+            'nextSearch',
+            nextProps.location,
+            'nextState',
+            nextState,
+            'prevState',
+            prevState, 'this.state'
+        )
+        if (prevProps.location !== nextProps.location) {
+            // but if prevProps.location has a props(different location.search value by
+            // click), then re-render please how to make the posts component get reloaded!?
+            console.log('preProps changed')
+           this.postsProc()
+           this.showPosts(this.state.posts , this.state.categories)
+        }
+    }
+
+    postsProc(prevState) {
+        console.log('4 postProc')
+        // distracting markdown information one by one what do I have to get?
+        // frontmatter, body? yes... frontmatter.thumbnail => post card category aside
+        // should be made up of the ...???
         markdownFiles.map(async (md, i) => {
             var distracting = await fetch(md).then(async (res) => {
-                // var loadingProgress = i / markdownFiles.length * 100
+
+                // making Title
                 var url = decodeURI(res.url)
                 var ns = url.substring(url.lastIndexOf('/') + 1)
                 var hn = ns.split(".")[0];
@@ -44,13 +89,29 @@ export default class LongThoughts extends React.Component {
 
                 var frontmatter = matter(fr).data
 
-                var parcel = {
-                    frontmatter,
-                    title,
-                    path
-                }
+                // get query-string the category object
+                var lsCategory = qs
+                    .parse(window.location.search)
+                    .category
 
-                return parcel
+                if (frontmatter.category === lsCategory || (frontmatter.category != undefined && frontmatter.category.includes(lsCategory))) {
+                    // if this parsing md frontmatter has the querystring category, put them into
+                    // 'frontmatter'
+                    var parcel = {
+                        frontmatter,
+                        title,
+                        path
+                    }
+                    return parcel
+                } else {
+                    // if not, just frontmatter only(to leave category tab without change)
+                    var parcel = {
+                        frontmatter
+                    }
+
+                    // console.log('parcel', parcel)  return whole categories just
+                    return parcel
+                }
 
             })
 
@@ -88,84 +149,93 @@ export default class LongThoughts extends React.Component {
             // done !just sending the false of loading in mapping put distracted markdown
             // title/frontmatter into shallow this.state.posts
 
-            this.setState({posts: shallowPosts, loading: false, categories: setToArray})
+            if(prevState!=undefined){
+                // setState right away
+                this.setState((prevState)=>({posts: prevState.shallowPosts, loading: false, categories: prevState.setToArray}))
+
+            }else{
+                // delayed setState
+                this.setState({posts: shallowPosts, loading: false, categories:setToArray})
+
+            }
 
         })
 
-        // categoryMaker(this.state.posts)
+    }
+
+
+    showPosts(posts, categories){
+        console.log('5 showPosts')
+
+        return (
+            <div className="posts-container">
+                <aside className="categories">
+                    {/* category called */}
+                    {
+                        categories.map(
+                            // url sended through category
+                            (category, i) => <Link to={`${ `?category=` + category}`} key={i}>
+                                <h4 className="category" key={i}>{category}</h4>
+                            </Link>
+    
+                        )
+    
+                    }
+                </aside>
+    
+                {/* posts call through mapping  */}
+                <article className="posts">
+                    {
+    
+                        posts.map((post, i) => {
+    
+                            if (post.frontmatter.status === 'draft') {
+                                return console.log(post.title, 'draft md file exist')
+                            } else if (post === undefined || post.path === undefined) {
+                                return console.log('no post')
+                            } else {
+                                // console.log('post', post)
+    
+                                return <Link
+                                    to={post
+                                        .path
+                                        .replace(/ /gi, "-")}
+                                    key={i}>
+    
+                                    <div className='post-link-frame' key={i}>
+                                        <h3 className='numbering'>{i}</h3>
+                                        <img src={post.frontmatter.thumbnail}></img>
+                                        <h4 className='post-title'>{post.title}</h4>
+                                    </div>
+                                </Link>
+                            }
+                        })
+                    }</article>
+    
+            </div>
+        )
+    }
+    
+
+    componentDidMount() {
+        console.log('2 componentDidMount')
+
+        this.postsProc()
 
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-
-        // how to prevent rerender until whole amount posts get loaded?  then only
-        // updated(rerendering) when the post loading is done? length of post?? wow..
-        // this is working!!! I could stop the re-rendering! then,  I can make that
-        // opposite?? :D
-
-        var loaded = this.state.posts.length
-        var postCounts = markdownFiles
-            .length
-            console
-            .log(loaded, postCounts)
-        var loadingStatus = this.state.loading
-
-        if (this.state.posts.length !== markdownFiles.length - 1) {
-
-            // console.log('still loading') console.log('loading', loadingStatus)
-            return false
-        } else {
-            // console.log('loading complete!') console.log('loading', loadingStatus)
-            return true
-        }
-    }
+    
 
     render() {
-        const {posts, loading, categories} = this.state
-        const props = this
-            .props
-     
+        console.log('1 render')
+
+        const {posts, categories, loading} = this.state
 
         if (loading) {
             return <RenderingIcon></RenderingIcon>
         } else {
-            return (
-                <div className="posts-container">
-                    <aside className="categories">
-                        {
-                            categories.map(
-                                (category, i) => <Link to={'categorized/' + category}>
-                                    <h4 className="category" key={i}>{category}</h4>
-                                </Link>
-                            )
-                        }
-                    </aside>
+            return this.showPosts(posts, categories)
 
-                    <article className="posts">
-                        {
-                      
-                            posts.map((post, i) => {
-                                if (post.frontmatter.status == 'draft') {
-                                    return console.log('draft md file')
-                                } else {
-                                    return <Link
-                                        to={props.match.url + '/' + post
-                                            .path
-                                            .replace(/ /gi, "-")}>
-
-                                        <div className='post-link-frame'>
-                                            <h3 className='numbering'>{i}</h3>
-                                            <img src={post.frontmatter.thumbnail}></img>
-                                            <h4 className='post-title'>{post.title}</h4>
-                                        </div>
-                                    </Link>
-                                }
-                            })
-                        }</article>
-
-                </div>
-
-            )
         }
 
     }

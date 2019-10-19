@@ -54,6 +54,7 @@
     }
 
     .nav {
+        padding-right:$goldenRate*2;
         align-items: center;
         grid-column: 2;
        
@@ -67,7 +68,6 @@
             justify-content: flex-end;       
          }
         li {
-           
             padding: $goldenRate/2;
             font-family: $fontRailWay;
             display: inline-block;
@@ -93,7 +93,6 @@
             .post-link-frame {
                 transition: all ease-in-out 0.3s;
                 padding: $goldenRate;
-                width: 160px;
                 background-size: cover;
                 display: table-cell;
                 vertical-align: middle;

@@ -1,6 +1,7 @@
 import React from 'react'
 import * as matter from 'gray-matter';
 
+
 // remark-react libraries 3
 import MarkdownReact from 'react-markdown';
 
@@ -69,7 +70,12 @@ class LongThought extends React.Component {
                     {/* <date>{frontmatter.date}</date> */}
                 </header>
                 <MarkdownReact source={md}></MarkdownReact>
+
+
+
             </div>
+
+            
         )
     }
 
