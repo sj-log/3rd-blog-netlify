@@ -70,3 +70,8 @@ sum(3)
     - 배리법은 (p -> q) 일때, (p ^ ~q)를 가정하면 모순(c)가 생긴다는 걸 보이면 된다. 
     - 명제의 간소화 부분이 이해되지 않았으나, [이 사이트에 나온 결합법칙을 적용하면 될 것 같아 적용해보니 잘 증명되었다.](http://contents.kocw.or.kr/document/lec/2011/chungbuk/teaching/02_1.pdf)
       - 졸려서 정신이 몽롱 할 때는, True or False를 False라고 하는 실수를 하게된다. 음... 어떻게 해야 이걸 정신이 몽롱해지는 경우를 피할 수 있을까
+
+
+- 10/25
+
+![오하이오-대학교-증명법-선택의-방법](https://user-images.githubusercontent.com/35059428/67547066-fa3c5d00-f738-11e9-8d81-9996c7d423e6.png)
