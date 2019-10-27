@@ -38,7 +38,7 @@ status : draft
   
   ![수학적-귀납법-김소연-ebs-강사님](https://user-images.githubusercontent.com/35059428/67183349-2fd10580-f41c-11e9-9793-af0b60670aeb.png)
 
-    - [관련 내용은 김소연 선생님의 수학적 귀납법 수업](https://www.youtube.com/watch?v=HSzmYUNoj7c) 참고
+    - [관련 내용은 김소연 선생님의 수학적 귀납법 수업](https://youtu.be/HSzmYUNoj7c?t=1816) 참고
 
 ```
 def sum(x) :
@@ -73,5 +73,7 @@ sum(3)
 
 
 - 10/25
+  - 어떤 증명법을 어떤 때에 써야하는지 몰랐다.
+  - 그래서 찾아보니 나타난 
 
 ![오하이오-대학교-증명법-선택의-방법](https://user-images.githubusercontent.com/35059428/67547066-fa3c5d00-f738-11e9-8d81-9996c7d423e6.png)
