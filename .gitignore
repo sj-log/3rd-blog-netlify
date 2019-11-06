@@ -11,6 +11,9 @@
 # production
 /build
 
+# specific folder
+src/posts/diary
+
 # misc
 .DS_Store
 .env.local
