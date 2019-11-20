@@ -94,7 +94,7 @@ export default class LongThoughts extends React.Component {
                     .parse(window.location.search)
                     .category
 
-                if (frontmatter.category === lsCategory || (frontmatter.category != undefined && frontmatter.category.includes(lsCategory))) {
+                if (frontmatter.category === lsCategory || (frontmatter.category !== undefined && frontmatter.category.includes(lsCategory))) {
                     // if this parsing md frontmatter has the querystring category, put them into
                     // 'frontmatter'
                     var parcel = {
@@ -149,7 +149,7 @@ export default class LongThoughts extends React.Component {
             // done !just sending the false of loading in mapping put distracted markdown
             // title/frontmatter into shallow this.state.posts
 
-            if(prevState!=undefined){
+            if(prevState!==undefined){
                 // setState right away
                 this.setState((prevState)=>({posts: prevState.shallowPosts, loading: false, categories: prevState.setToArray}))
 
@@ -169,19 +169,6 @@ export default class LongThoughts extends React.Component {
 
         return (
             <div className="posts-container">
-                <aside className="categories">
-                    {/* category called */}
-                    {
-                        categories.map(
-                            // url sended through category
-                            (category, i) => <Link to={`${ `?category=` + category}`} key={i}>
-                                <h4 className="category" key={i}>{category}</h4>
-                            </Link>
-    
-                        )
-    
-                    }
-                </aside>
     
                 {/* posts call through mapping  */}
                 <article className="posts">
@@ -240,3 +227,19 @@ export default class LongThoughts extends React.Component {
 
     }
 }
+
+
+
+// <aside className="categories">
+// {/* category called */}
+// {
+//     categories.map(
+//         // url sended through category
+//         (category, i) => <Link to={`${ `?category=` + category}`} key={i}>
+//             <h4 className="category" key={i}>{category}</h4>
+//         </Link>
+
+//     )
+
+// }
+// </aside>

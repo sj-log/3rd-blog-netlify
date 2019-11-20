@@ -77,8 +77,8 @@
     .posts-container {
         @include body;
         display:grid;
-        grid-template-columns: 30% 70%;
-        column-count: 3;
+        // grid-template-columns: 30% 70%;
+        // column-count: 3;
         column-gap: 0;
         .categories{
             grid-column-start: 1;
@@ -87,9 +87,8 @@
             }
         }
         .posts {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            grid-column-start: 2;
+            
+            
             .post-link-frame {
                 transition: all ease-in-out 0.3s;
                 padding: $goldenRate;
