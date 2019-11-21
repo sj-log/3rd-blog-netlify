@@ -67,9 +67,7 @@ export default class LongThoughts extends React.Component {
 
     postsProc(prevState) {
         console.log('4 postProc')
-        // distracting markdown information one by one what do I have to get?
-        // frontmatter, body? yes... frontmatter.thumbnail => post card category aside
-        // should be made up of the ...???
+   
         markdownFiles.map(async (md, i) => {
             var distracting = await fetch(md).then(async (res) => {
 
@@ -94,24 +92,26 @@ export default class LongThoughts extends React.Component {
                     .parse(window.location.search)
                     .category
 
-                if (frontmatter.category === lsCategory || (frontmatter.category !== undefined && frontmatter.category.includes(lsCategory))) {
-                    // if this parsing md frontmatter has the querystring category, put them into
-                    // 'frontmatter'
+                // if (frontmatter.category === lsCategory || (frontmatter.category !== undefined && frontmatter.category.includes(lsCategory))) {
+                //     // if this parsing md frontmatter has the querystring category, put them into
+                //     // 'frontmatter'
+                //     var parcel = {
+                //         frontmatter,
+                //         title,
+                //         path
+                //     }
+                //     return parcel
+                // } else {
+                    // if not, just frontmatter only(to leave category tab without change)
                     var parcel = {
                         frontmatter,
                         title,
                         path
                     }
-                    return parcel
-                } else {
-                    // if not, just frontmatter only(to leave category tab without change)
-                    var parcel = {
-                        frontmatter
-                    }
 
                     // console.log('parcel', parcel)  return whole categories just
                     return parcel
-                }
+                // }
 
             })
 
@@ -183,18 +183,24 @@ export default class LongThoughts extends React.Component {
                             } else {
                                 // console.log('post', post)
     
-                                return <Link
+                                return  <div className='post-link-frame' key={i}>
+                                    
+                                    
+                                     <Link
+                                     className="title-wrapper"
                                     to={post
                                         .path
                                         .replace(/ /gi, "-")}
                                     key={i}>
     
-                                    <div className='post-link-frame' key={i}>
-                                        <h3 className='numbering'>{i}</h3>
-                                        <img src={post.frontmatter.thumbnail}></img>
-                                        <h4 className='post-title'>{post.title}</h4>
-                                    </div>
+                                  
+                                        <span className='numbering'>{i} </span>
+                                        {/* <img src={post.frontmatter.thumbnail}></img> */}
+                                        <span className='post-title'>{post.title}</span>
+                                
+                                  
                                 </Link>
+                                </div>
                             }
                         })
                     }</article>

@@ -13,12 +13,6 @@ export default class Nav extends React.Component {
                         <FontAwesomeIcon icon={faLeaf} color='grey'/>
                     </li>
                     <li>
-                        <Link to="/about">Who</Link>
-                    </li>
-                    <li>
-                        <Link to="/small-thought">Small thought</Link>
-                    </li>
-                    <li>
                         <Link to="/long-thought">Long thought</Link>
                     </li>
 

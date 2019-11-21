@@ -6,7 +6,7 @@ export default class Application extends React.Component {
     render() {
         return (
             <div className="application">
-                <Helmet defaultTitle="Sj log" titleTemplate="%s | Sj">
+                <Helmet defaultTitle="log" titleTemplate="%s | Sj">
 
                     <meta charSet="utf-8"/>
                     <meta name="description" content="Sj Blog Article"/>
