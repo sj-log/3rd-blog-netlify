@@ -11,13 +11,13 @@ var Intro = () => {
                 {/* <img
                     src="https://scontent-sin6-1.cdninstagram.com/vp/b32f778adfe5fa3822f4a0e54edafef8/5E23D78C/t51.2885-15/e35/s1080x1080/67673091_890824034610624_4093358327862933201_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=100"></img> */}
             </section>
-            <aside className="text-section">
+            {/* <aside className="text-section">
                 <h1>Good things with freedom</h1>
                 <p>Have been traveled world, to make better version of myself.</p>
                 <p>Wanna make better world by enriching my capacity.</p>
                 <p>This place is the showcase how I spread goodness.</p>
                 <button className="a read-more"><Link to="/about">Read More</Link></button>
-            </aside>
+            </aside> */}
         </section>
     )
 

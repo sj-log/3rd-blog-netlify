@@ -9,7 +9,9 @@ export default class Nav extends React.Component {
             <nav className="nav">
 
                 <ul>
-                   
+                    <li>
+                       <Link to="/" className="logo">Sj</Link>
+                       </li>
                     <li>
                         <Link to="/log">log</Link>
                     </li>

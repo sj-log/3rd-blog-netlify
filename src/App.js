@@ -12,7 +12,6 @@ import SmallThought from './components/SmallThought';
 import CategorizedPosts from './components/CategorizedPosts';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import Logo from './components/Logo';
 
 export default class App extends React.Component {
 
@@ -23,7 +22,7 @@ export default class App extends React.Component {
                 <div className="App">
                     <header className="header">
                         <Helmet/>
-                        <Logo/>
+               
                         <Nav/>
                     </header>
 
