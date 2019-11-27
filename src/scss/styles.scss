@@ -22,7 +22,7 @@
         display: none;
     }
 
-    * > a {
+    *>a {
         text-decoration: none;
         color: $basicFontColor;
     }
@@ -30,9 +30,11 @@
     .body-section {
         display: grid;
         grid-template-columns: 60% 40%;
+
         .img-section {
             display: inline-block;
             overflow: hidden;
+
             img {
                 position: relative;
                 top: 50%;
@@ -41,9 +43,11 @@
             }
 
         }
+
         .text-section {
             margin: auto 0;
             display: inline-block;
+
             .read-more {
                 border: 1px solid black;
                 padding: $goldenRate;
@@ -54,10 +58,10 @@
     }
 
     .nav {
-        padding-right:$goldenRate*2;
+        padding-right: $goldenRate*2;
         align-items: center;
         grid-column: 2;
-       
+
         ul {
             height: 100%;
             margin: 0;
@@ -65,8 +69,9 @@
             display: flex;
             // vertically middle - align item:center
             align-items: right;
-            justify-content: flex-end;       
-         }
+            justify-content: flex-end;
+        }
+
         li {
             padding: $goldenRate/2;
             font-family: $fontRailWay;
@@ -75,46 +80,53 @@
     }
 
     .posts-container {
+        overflow-x: hidden;
         @include body;
-        display:grid;
+        display: grid;
         // grid-template-columns: 30% 70%;
         // column-count: 3;
         column-gap: 0;
-        .categories{
+
+        .categories {
             grid-column-start: 1;
-            .category{
+
+            .category {
                 font-weight: 100;
             }
         }
+
         .posts {
-        
-            .post-link-frame:hover{
+
+            .post-link-frame:hover {
                 transform: translateX(10px);
             }
+
             .post-link-frame {
-             
+
                 transition: all ease-in-out 0.3s;
                 background-size: cover;
                 vertical-align: middle;
                 justify-self: stretch;
                 overflow: hidden;
                 // box-shadow: 0px 0px 2px 0px $subInfoColor;
-               
+
                 img {
                     display: none;
                     width: $goldenRate * 7;
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
-                    
+
                 }
+
                 .numbering {
                     font-weight: 100;
                     text-align: left;
                     color: grey;
                 }
+
                 .post-title {
-                    margin:$goldenRate/2.5;
-                    
+                    margin: $goldenRate/2.5;
+
                     text-align: left;
                     font-weight: 400;
                     font-family: $fontRailWay;
@@ -130,6 +142,7 @@
             transition: all ease-in-out 0.3s;
             box-shadow: inset 0 0 10px 0 $subInfoColor;
         }
+
         height: 150px;
         padding: $goldenRate;
         margin: 0;
@@ -143,14 +156,34 @@
         text-align: left;
         margin: 0 auto;
         width: 50vw;
+
         img {
             position: relative;
             width: 50vw;
         }
+
         pre {
+            padding: 1.1613rem;
+            background: #4b464608;
             overflow: auto;
+            color: #5f5757e0;
 
         }
+
+        // code padding and scrollbar 
+        pre::-webkit-scrollbar {
+            width: 1px;
+            height: 9px;
+        }
+
+
+        pre:hover::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+
         .badge {
             box-sizing: content-box;
             display: table-cell;
@@ -158,6 +191,7 @@
             vertical-align: middle;
             border-radius: 20%;
         }
+
         .pink {
             background-color: peachpuff;
 

@@ -1,10 +1,8 @@
 ---
 layout : post
-category : [massage, review, travel, ubud]
+category : Bali Life
 comments: true
 ---
-* TOC
-{:toc}
 
 # 비추, -2.5 점 정도? 이유는?
 

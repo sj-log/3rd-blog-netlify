@@ -1,11 +1,9 @@
 ---
 layout: post
-category : [Business, Cat Litter]
+category : Idea
 comments : true
 ---
 
-* TOC
-{:toc}
 
 # 무엇을 팔 것인가 - 리스트 작성하기
 

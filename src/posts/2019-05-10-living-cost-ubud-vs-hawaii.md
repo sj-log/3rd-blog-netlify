@@ -1,6 +1,6 @@
 ---
 layout : post
-category : [essay, travel, comparison]
+category : Bali Life
 comments : true
 ---
 

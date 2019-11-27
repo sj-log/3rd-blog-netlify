@@ -1,11 +1,10 @@
 ---
 layout : post
-category : [essay,self-develop,priotization]
+category : Essay
 comments : true
 ---
 
-* TOC
-{:toc}
+
 
 # Self Develop myself.
 

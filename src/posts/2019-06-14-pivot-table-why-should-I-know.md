@@ -1,11 +1,9 @@
 ---
 layout: post
-category : [Pivot Table, Excel, Analysis, Data, Google Sheet]
+category : Data Management
 comments: true
 ---
 
-* TOC
-{:toc}
 
 It all decreases the works. Objectively, The quantity of works just get decreased!
 

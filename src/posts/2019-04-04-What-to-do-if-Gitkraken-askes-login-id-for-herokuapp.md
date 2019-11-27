@@ -1,6 +1,6 @@
 ---
 layout: post
-category: ["Coding","Git","Heroku"]
+category: Coding
 comments: true
 ---
 

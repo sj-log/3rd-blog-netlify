@@ -1,6 +1,6 @@
 ---
 layout : post 
-category : [일기, 요가, 발리살이, 디지털노마드, 일상, Intuitive Flow]
+category : Bali Life
 comments : true
 thumbnail : https://t1.daumcdn.net/cfile/tistory/995105335A1FC6D919
 ---

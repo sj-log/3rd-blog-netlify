@@ -9,11 +9,9 @@ export default class Nav extends React.Component {
             <nav className="nav">
 
                 <ul>
+                   
                     <li>
-                        <FontAwesomeIcon icon={faLeaf} color='grey'/>
-                    </li>
-                    <li>
-                        <Link to="/long-thought">Long thought</Link>
+                        <Link to="/log">log</Link>
                     </li>
 
                 </ul>

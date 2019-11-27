@@ -1,12 +1,10 @@
 ---
 layout : post
-category : [Facebook, Open Graph, SEO, Marketing, Blogging]
+category : Marketing
 commnets : true
 thumbnail : https://images.unsplash.com/photo-1526498460520-4c246339dccb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80 
 ---
 
-* TOC
-{:toc}
 
 # Facebook에 내 포스팅을 공유해도 Img가 나타나지 않을때
 

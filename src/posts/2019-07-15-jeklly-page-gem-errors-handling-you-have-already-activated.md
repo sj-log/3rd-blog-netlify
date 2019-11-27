@@ -1,12 +1,9 @@
 ---
 layout : post
-category : [Jekyll, Blogging, Error, Gem, Ruby]
+category : Coding
 comments : true
 thumbnail : https://images.unsplash.com/photo-1543285198-3af15c4592ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80
 ---
-
-* TOC
-{:toc}
 
 Jekyll Gem file Errors
 

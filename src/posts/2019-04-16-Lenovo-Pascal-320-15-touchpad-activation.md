@@ -1,7 +1,7 @@
 ---
 layout: post
 tags : lenovo pascal touchpad solution
-
+category : TIL
 ---
 
 # You just need to download Touchpad Driver!

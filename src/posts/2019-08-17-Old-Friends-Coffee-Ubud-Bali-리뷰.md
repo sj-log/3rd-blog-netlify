@@ -1,3 +1,7 @@
+---
+category : Bali Life
+---
+
 까페 리뷰
 
 전체적으로 좋았다.

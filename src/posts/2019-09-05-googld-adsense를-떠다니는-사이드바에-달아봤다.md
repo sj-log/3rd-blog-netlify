@@ -1,12 +1,9 @@
 ---
 layout: post
 comments: true
-category : [Google Adsense, Marketing, Passive income, Coding, Blogging]
+category : Coding
 thumbnail : https://images.unsplash.com/photo-1518183214770-9cffbec72538?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
 ---
-
-* TOC
-{:toc}
 
 # Google adsense 사이드 ad 만들기
 

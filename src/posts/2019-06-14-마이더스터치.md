@@ -1,6 +1,6 @@
 ---
 layout : post
-category : [Book, Review, Rich]
+category : Book
 Thumbnail : 
 comments : true
 ---

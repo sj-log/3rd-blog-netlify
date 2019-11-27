@@ -1,3 +1,7 @@
+---
+category : Essay
+---
+
 I have wondered what is top priority in our living.
 
 but now, finally got what is that.

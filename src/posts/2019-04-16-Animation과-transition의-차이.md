@@ -1,12 +1,10 @@
 ---
 layout: post
-tags: [css, animation, transition,]
-category : [Coding, CSS]
+tags: [css, animation, transition]
+category : Coding
 comments: true
 ---
 
-* TOC
-{:toc}
 
 CSS를 만지다 하도 헷갈려서 찾아보게됐다.
 유저들이 블로그에 좀 더 오래 머무르게 만들기 위해선

@@ -1,6 +1,6 @@
 ---
 layout: post
-category : [Coding, Window, Tech]
+category : Coding
 comments: true
 ---
 

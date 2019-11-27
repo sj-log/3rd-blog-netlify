@@ -1,11 +1,9 @@
 ---
 layout : post
-category : [Selenium, Instagram, Python, Coding]
+category : Coding
 comments : true
 ---
 
-* TOC
-{:toc}
 
 To make a click in Selenium(Python)
 

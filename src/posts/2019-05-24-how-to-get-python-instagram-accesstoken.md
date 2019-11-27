@@ -1,11 +1,9 @@
 ---
 layout : post
-category : [Python, Instagram, Coding, Growthhacking]
+category : Coding
 comments : true
 ---
 
-* TOC
-{:toc}
 
 
 How I get the accesstoken from My instagram account, through Python-instagram?

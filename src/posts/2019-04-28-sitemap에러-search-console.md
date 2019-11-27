@@ -1,11 +1,9 @@
 ---
 layout : post
-category : [Blog, Jekyll, Error, Search Console]
+category : Coding
 comments : true
 ---
 
-* TOC
-{:toc}
 
 구글 Search Console을 통해 다시 수정된 주소로
 구글에 검색되게 만들고자 했다.

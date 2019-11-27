@@ -1,6 +1,6 @@
 ---
 layout : post
-category : [coding, javascript, css]
+category : Coding
 comments : true
 ---
 

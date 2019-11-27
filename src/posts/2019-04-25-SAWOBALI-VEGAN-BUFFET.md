@@ -1,6 +1,6 @@
 ---
 layout: post
-category : [ubud, sawobali, review, travel, buffet, vegan]
+category : Bali Life
 comments : true
 ---
 

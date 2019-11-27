@@ -1,6 +1,6 @@
 ---
 layout : post
-category : [default network, yoga]
+category : Productivity
 comments : true
 ---
 

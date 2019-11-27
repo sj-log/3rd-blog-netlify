@@ -1,12 +1,8 @@
 ---
 layout: post
 comments : true
-category: ["Coding","Jekyll"]
+category: Coding
 ---
-
-
-* Toc
-{:toc}
 
 - [FontAwesome 사이트](https://fontawesome.com/icons?from=io)에서 CDN을 복사한다.
 

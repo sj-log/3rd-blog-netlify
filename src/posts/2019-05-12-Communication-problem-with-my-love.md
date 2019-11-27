@@ -1,6 +1,6 @@
 ---
 layout: post
-category : [essay, communication]
+category : Essay
 thumbnail : https://user-images.githubusercontent.com/35059428/57578545-0b621c00-74c1-11e9-94ca-157391b89229.jpg
 comments : true
 ---

@@ -1,10 +1,8 @@
 ---
 layout : post
 Comments : true
-Category: [Coding, CSS]
+Category: Coding
 ---
-* TOC
-{:toc}
 
 # 결론
 

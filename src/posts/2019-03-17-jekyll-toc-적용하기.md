@@ -1,11 +1,8 @@
 ---
 layout: post
 comments : true
-category: ["Coding","Jekyll"]
+category: Coding
 ---
-
-* TOC
-{:toc}
 
 글을 써놓고,
 목차별로 한 눈에 볼 수 있게 만들고 싶었다.

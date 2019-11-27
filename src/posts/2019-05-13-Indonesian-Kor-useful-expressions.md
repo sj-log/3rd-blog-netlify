@@ -1,3 +1,8 @@
+---
+category : Bali Life
+---
+
+
 # 인도네시아어 
 
 에낙 스칼리 수까 - It's delicious I like
