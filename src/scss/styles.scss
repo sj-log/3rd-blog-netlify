@@ -3,12 +3,15 @@
     font-family: 'kimku';
     src: url('kimku.ttf') format('truetype'); 
 }
-
+@font-face {
+    font-family : 'A펜글씨B';
+    src:url('A펜글씨B.TTF') format('truetype');
+}
 @font-face {
     font-family : 'jeongum';
     src:url('jeongum.ttf') format('truetype');
 }
-
+@font-face { font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'Chosunilbo_myungjo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'Arita-buri-SemiBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff'); font-weight: normal; font-style: normal; }
 @font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
@@ -34,7 +37,7 @@
         display: none;
     }
 
-    *>a {
+    *>a:not(.logo) {
         text-decoration: none;
         color: $basicFontColor;
     }
@@ -45,10 +48,11 @@
         .img-section {
             width: 100%;
             overflow: hidden;
-
+            height: 400px;
+            
             img {
                 width: 80%;
-              
+            
             }
 
         }
@@ -170,12 +174,17 @@
         margin: 0 auto;
         width: 50vw;
 
-        p, li, strong, code{
-            font-family: 'GyeonggiBatang';
+        p, li, code, table {
+            font-family: 'RIDIBatang';
+            color : rgb(98, 98, 98) ;
+        }
+        strong{
+            font-family: 'RIDIBatang';
+            color : black;
         }
 
         h1, h2,h3 {
-            font-family: 'Arita-buri-SemiBold';
+            font-family: 'A펜글씨B';
         }
         h1{
             line-height:40px;

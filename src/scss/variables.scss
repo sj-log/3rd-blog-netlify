@@ -14,10 +14,12 @@ $subInfoColor :#80808075;
 margin: 0 auto;
 }
 @mixin logo {
+    background: white;
+    color: black;
     grid-column: 1 ;
     text-decoration: none;
     font-size : $goldenRate*1.5 ;
     font-family: 'La Belle Aurore', cursive;
     text-align:left;
-    padding-left: $goldenRate*2;
+    padding: $goldenRate/2;
 }
