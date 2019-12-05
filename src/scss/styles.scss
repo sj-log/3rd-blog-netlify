@@ -110,7 +110,10 @@
         }
 
         .posts {
-
+            h1 {
+                font-family : 'A펜글씨B';
+                font-size: $goldenRate*2.0;
+            }
            
             .post-link-frame:hover {
                 transform: translateX(10px);
@@ -145,7 +148,7 @@
 
                     text-align: left;
                     font-weight: 400;
-                    font-family: $fontRailWay;
+                    font-family: 'RIDIBatang';
                     display: inline-block;
 
                 }
