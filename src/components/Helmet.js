@@ -19,6 +19,15 @@ export default class Application extends React.Component {
                 <link rel="apple-touch-icon" href="logo192.png"/>
                 <link rel="canonical" href="http://mysite.com/example"/>
 
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                {/* Google Adsense */}
+<script>
+    {` (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9404465753932962",
+          enable_page_level_ads: true
+     });`}
+</script>
+
              {/* Google Analytics */}
                 <script
                     async="async"
