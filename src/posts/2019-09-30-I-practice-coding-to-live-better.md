@@ -6,8 +6,7 @@ tags : [Coding, Learning, Capacity, ReactJs, Javascript]
 thumbnail : https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=693&q=80
 ---
 
-* TOC
-{:toc}
+ 
 
 # I want to live better.
 

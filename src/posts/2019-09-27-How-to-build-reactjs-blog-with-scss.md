@@ -6,8 +6,7 @@ tags : [ReactJs, SCSS, Front-End, Blog]
 thumbnail : https://images.unsplash.com/photo-1536859355448-76f92ebdc33d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
 ---
 
-* TOC
-{:toc}
+ 
 
 # I wanna build a gatsby blog or react blog. 
 

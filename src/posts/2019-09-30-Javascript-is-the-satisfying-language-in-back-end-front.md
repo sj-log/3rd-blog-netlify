@@ -6,8 +6,7 @@ tags : [Coding, Capacity, ReactJs, Javascript, Fullstack]
 thumbnail : https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80
 ---
 
-* TOC
-{:toc}
+ 
 
 # I'd like to learn the request and respond things in server side as well more deeply
 

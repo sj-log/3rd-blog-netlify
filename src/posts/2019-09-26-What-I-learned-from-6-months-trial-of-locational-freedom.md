@@ -6,8 +6,6 @@ tags : [Review, Digital Nomad, Bali life, Bali, Locational Freedom, Remote work,
 thumbnail : https://images.unsplash.com/photo-1508394522741-82ac9c15ba69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1948&q=80
 ---
 
-* TOC
-{:toc}
 
 # We wanted to capture our blueprint what we've dreamed for.
 First, we wanted to have the freedom and capacity wherever we want to be.

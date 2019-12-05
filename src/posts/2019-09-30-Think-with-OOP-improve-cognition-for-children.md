@@ -6,8 +6,7 @@ tags : [Coding, Reason, Education, Improvement]
 thumbnail : https://images.unsplash.com/photo-1453745541039-d804ab0ff1ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
 ---
 
-* TOC
-{:toc}
+ 
 
 
 # What is the Object Oriented Program.

@@ -26,7 +26,6 @@ export default class LongThoughts extends React.Component {
 
     }
     shouldComponentUpdate() {
-        console.log('* shouldComponentUpdate')
 
         // control center for re-render
 
@@ -35,27 +34,27 @@ export default class LongThoughts extends React.Component {
             // let them loading first all posts
             return false
         } else {
-            console.log('post Load all done')
+            // console.log('Post loading is completed')
             return true
         }
     }
 
     componentWillReceiveProps(nextProps, prevProps, nextState, prevState) {
         // when prevProps're changed
-        console.log('3 componentWillReceiveProps')
+        // console.log('3 componentWillReceiveProps')
 
-        console.log(1, 'prevSearch', prevProps.location, 'nextSearch', nextProps.location, 'nextState', nextState, 'prevState', prevState, 'this.state')
+        // console.log(1, 'prevSearch', prevProps.location, 'nextSearch', nextProps.location, 'nextState', nextState, 'prevState', prevState, 'this.state')
         if (prevProps.location !== nextProps.location) {
             // but if prevProps.location has a props(different location.search value by
             // click), then re-render please how to make the posts component get reloaded!?
-            console.log('preProps changed')
+            // console.log('preProps changed')
             this.postsProc()
             this.showPosts(this.state.posts, this.state.categories)
         }
     }
 
     postsProc(prevState) {
-        console.log('4 postProc')
+        // console.log('4 postProc')
 
         markdownFiles.map(async(md, i) => {
             var distracting = await fetch(md).then(async(res) => {
@@ -154,26 +153,7 @@ export default class LongThoughts extends React.Component {
 
                 {/* posts call through mapping  */}
                 <article className="posts">
-                    <h1>TIL</h1>
-                    {posts.map((post, i) => {
-
-                        if (post.frontmatter.category == 'TIL') {
-                            return <div className='post-link-frame' key={i}>
-                                <Link
-                                    className="title-wrapper"
-                                    to={post
-                                    .path
-                                    .replace(/ /gi, "-")}
-                                    key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
-                                    <span className='post-title'>{post.title}</span>
-
-                                </Link>
-                            </div>
-                        }
-                    })
-}
+                 
                     <h1>Book</h1>
                     {posts.map((post, i) => {
 
@@ -185,8 +165,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -206,8 +185,25 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
+                                    <span className='post-title'>{post.title}</span>
+
+                                </Link>
+                            </div>
+                        }
+                    })
+}   <h1>TIL</h1>
+                    {posts.map((post, i) => {
+
+                        if (post.frontmatter.category == 'TIL') {
+                            return <div className='post-link-frame' key={i}>
+                                <Link
+                                    className="title-wrapper"
+                                    to={post
+                                    .path
+                                    .replace(/ /gi, "-")}
+                                    key={i}>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -225,8 +221,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -244,8 +239,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -263,8 +257,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -283,8 +276,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -303,8 +295,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    <span className='numbering'>{i}
-                                    </span>
+                                    
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>

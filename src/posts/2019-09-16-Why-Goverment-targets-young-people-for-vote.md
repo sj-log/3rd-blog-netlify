@@ -6,9 +6,6 @@ tags : [Politic, South Korea, Assembly, Congress, Parties]
 thumbnail : https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80
 ---
 
-* TOC
-{:toc}
-
 # 4. Why government targets young people for vote?
 
 왜 정부는 젊은 층을 투표 타겟으로 잡는가?

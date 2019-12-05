@@ -43,16 +43,15 @@
     }
 
     .body-section {
-        width: 60%;
+        width: 50%;
 
         .img-section {
             width: 100%;
             overflow: hidden;
-            height: 400px;
             
             img {
-                width: 80%;
-            
+                width: 100%;
+                object-fit: cover;
             }
 
         }
