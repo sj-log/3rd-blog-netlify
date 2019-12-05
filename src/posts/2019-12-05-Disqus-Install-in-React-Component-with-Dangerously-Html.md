@@ -8,6 +8,9 @@ I've struggled with a putting Disqus script in a component.
 
 Using [a npm library](https://yarnpkg.com/en/package/disqus-react#readme) is the spot on to make it done.
 
+
+
+
 1. type in terminal `yarn add disqus-react` or `npm install disqus-react`. used `yarn` for myself.
 
 2. follow the basic usage below
@@ -58,7 +61,18 @@ class Article extends React.Component {
                     height={160}
                 />
 ```
-4. Complete!
-5. 
+4. replaced `disqusConfig identifier` is from `this.props.location.key`;
+`config url` is from `this.props.location.url`;
+
+```js
+ const disqusConfig = {
+            url: this.props.location.url,
+            identifier: this.props.location.key,
+            title: this.state.frontmatter.title,
+        };
+```
+
+
+5. Complete! 
 ![image](https://user-images.githubusercontent.com/35059428/70211511-a3369880-1778-11ea-8380-b8d59b10e835.png)
 
