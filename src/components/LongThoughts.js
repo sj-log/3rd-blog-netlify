@@ -40,10 +40,10 @@ export default class LongThoughts extends React.Component {
     }
 
     componentWillReceiveProps(nextProps, prevProps, nextState, prevState) {
-        // when prevProps're changed
-        // console.log('3 componentWillReceiveProps')
-
-        // console.log(1, 'prevSearch', prevProps.location, 'nextSearch', nextProps.location, 'nextState', nextState, 'prevState', prevState, 'this.state')
+        // when prevProps're changed console.log('3 componentWillReceiveProps')
+        // console.log(1, 'prevSearch', prevProps.location, 'nextSearch',
+        // nextProps.location, 'nextState', nextState, 'prevState', prevState,
+        // 'this.state')
         if (prevProps.location !== nextProps.location) {
             // but if prevProps.location has a props(different location.search value by
             // click), then re-render please how to make the posts component get reloaded!?
@@ -83,9 +83,9 @@ export default class LongThoughts extends React.Component {
                 // if (frontmatter.category === lsCategory || (frontmatter.category !==
                 // undefined && frontmatter.category.includes(lsCategory))) {     // if this
                 // parsing md frontmatter has the querystring category, put them into     //
-                // 'frontmatter'     var parcel = {         frontmatter,         title,
-                // path     }     return parcel } else { if not, just frontmatter only(to leave
-                // category tab without change)
+                // 'frontmatter'     var parcel = {         frontmatter,         title, path
+                // }     return parcel } else { if not, just frontmatter only(to leave category
+                // tab without change)
                 var parcel = {
                     frontmatter,
                     title,
@@ -153,7 +153,7 @@ export default class LongThoughts extends React.Component {
 
                 {/* posts call through mapping  */}
                 <article className="posts">
-                 
+
                     <h1>Book</h1>
                     {posts.map((post, i) => {
 
@@ -165,7 +165,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -185,14 +185,15 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
                             </div>
                         }
                     })
-}   <h1>TIL</h1>
+}
+                    <h1>TIL</h1>
                     {posts.map((post, i) => {
 
                         if (post.frontmatter.category == 'TIL') {
@@ -203,7 +204,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -221,7 +222,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -239,14 +240,15 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
                             </div>
                         }
                     })
-} <h1>Coding</h1>
+}
+                    <h1>Coding</h1>
                     {posts.map((post, i) => {
 
                         if (post.frontmatter.category == 'Coding' || post.frontmatter.category == 'coding') {
@@ -257,7 +259,7 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
@@ -265,7 +267,7 @@ export default class LongThoughts extends React.Component {
                         }
                     })
 }
-<h1>Bali Life</h1>
+                    <h1>Bali Life</h1>
                     {posts.map((post, i) => {
 
                         if (post.frontmatter.category == 'Bali Life') {
@@ -276,15 +278,15 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
                             </div>
                         }
                     })}
-                    
-<h1>Productivity</h1>
+
+                    <h1>Productivity</h1>
                     {posts.map((post, i) => {
 
                         if (post.frontmatter.category == 'Productivity') {
@@ -295,19 +297,18 @@ export default class LongThoughts extends React.Component {
                                     .path
                                     .replace(/ /gi, "-")}
                                     key={i}>
-                                    
+
                                     <span className='post-title'>{post.title}</span>
 
                                 </Link>
                             </div>
                         }
                     })}
-                    
+
                 </article>
 
             </div>
         )
-
 
     }
 
@@ -334,15 +335,15 @@ export default class LongThoughts extends React.Component {
 }
 
 // <aside className="categories"> {/* category called */} {     categories.map(
-//        // url sended through category         (category, i) => <Link to={`${
+//       // url sended through category         (category, i) => <Link to={`${
 // `?category=` + category}`} key={i}>             <h4 className="category"
 // key={i}>{category}</h4>         </Link>     ) } </aside> posts.map((post, i)
 // => {     if (post.frontmatter.status === 'draft') {         return
 // console.log(post.title, 'draft md file exist')     } else if (post ===
 // undefined || post.path === undefined) {         return console.log('no post')
 //     } else {         return  <div className='post-link-frame' key={i}>
-//       <Link              className="title-wrapper"             to={post
-//           .path                 .replace(/ /gi, "-")}             key={i}>
-//              <span className='numbering'>{i} </span>                 <span
-// className='post-title'>{post.title}</span>         </Link>         </div>
-// } })
+// <Link              className="title-wrapper"             to={post
+// .path                 .replace(/ /gi, "-")}             key={i}>
+// <span className='numbering'>{i} </span>                 <span
+// className='post-title'>{post.title}</span>         </Link>         </div> }
+// })
