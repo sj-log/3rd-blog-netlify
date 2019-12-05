@@ -1,48 +1,64 @@
 ---
 category : Coding
-comments: true
 ---
 
-How to install Discus comments in ReactJs app.
+## How to install Discus comments in ReactJs app.
 
 I've struggled with a putting Disqus script in a component.
-Should had to deploy behind the linds for Markdown configuration.
 
+Using [a npm library](https://yarnpkg.com/en/package/disqus-react#readme) is the spot on to make it done.
+
+1. type in terminal `yarn add disqus-react` or `npm install disqus-react`. used `yarn` for myself.
+
+2. follow the basic usage below
 ```js
-     <script dangerouslySetInnerHTML={{ __html:`  var disqus_config = function () {
-                        this.page.url = `+pathname+`;  // Replace * PAGE_URL with your page's canonical URL variable
-                        this.page.identifier = `+key+`; // Replace PAGE_IDENTIFIER with your page's unique * identifier variable
-                            };
- 
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://ollagada.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                    }</script>
-           
-                    <noscript>Please enable JavaScript to view the
-                        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-                    </noscript>
-`}}>{
-        
+import React from 'react';
+import Disqus from 'disqus-react';
+// Alternatively, import specific members:
+// import { DiscussionEmbed, CommentCount, CommentEmbed } from 'disqus-react';
+
+class Article extends React.Component {
+    render() {
+        const disqusShortname = 'example';
+        const disqusConfig = {
+            url: this.props.article.url,
+            identifier: this.props.article.id,
+            title: this.props.article.title,
+        };
+
+        return (
+            <div className="article">
+                <h1>{this.props.article.title}</h1>
+                <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
+                    Comments
+                </Disqus.CommentCount>
+
+                <p>{this.props.article.body}</p>
+
+                <Disqus.CommentEmbed 
+                    commentId={this.props.article.featuredComment}
+                    showMedia={true}
+                    height={160}
+                />
+
+                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+            </div>
+        );
     }
-</script>
+}
 ```
 
-normally, the disqus formal instruction is below.
 
-![disqus-in-react](https://user-images.githubusercontent.com/35059428/70209768-741e2800-1774-11ea-9883-37e769b178f9.png)
-
-then you just put the whole disqus context in between 
+3. removed below, as I don't need them.
 
 ```
- <script dangerouslySetInnerHTML={{ __html: 
- 
- `here` 
- 
- }} 
- </script>
+ <Disqus.CommentEmbed 
+                    commentId={this.props.article.featuredComment}
+                    showMedia={true}
+                    height={160}
+                />
 ```
+4. Complete!
+5. 
+![image](https://user-images.githubusercontent.com/35059428/70211511-a3369880-1778-11ea-8380-b8d59b10e835.png)
 

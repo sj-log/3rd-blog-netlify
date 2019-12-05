@@ -1,5 +1,6 @@
 import React from 'react'
 import * as matter from 'gray-matter';
+import Disqus from 'disqus-react';
 
 // remark-react libraries 3
 import MarkdownReact from 'react-markdown';
@@ -53,6 +54,15 @@ class LongThought extends React.Component {
     render() {
         const {md, frontmatter} = this.state;
         const {pathname, key} = this.props.location;
+        const disqusShortname = 'ollagada';
+        const disqusConfig = {
+            url: this.props.location.url,
+            identifier: this.props.location.key,
+            title: this.state.frontmatter.title,
+        };
+
+
+
         console.log(this.props)
         console.log(pathname, key)
 
@@ -66,29 +76,7 @@ class LongThought extends React.Component {
                 <MarkdownReact source={md}></MarkdownReact>
 
                 <footer>
-                    <div id="disqus_thread"></div>
-                    <script dangerouslySetInnerHTML={{ __html:`  var disqus_config = function () {
-                        this.page.url = `+pathname+`;  // Replace * PAGE_URL with your page's canonical URL variable
-                        this.page.identifier = `+key+`; // Replace PAGE_IDENTIFIER with your page's unique * identifier variable
-                            };
- 
-                (function() { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://ollagada.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                    })();
-                    }</script>
-           
-                    <noscript>Please enable JavaScript to view the
-                        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-                    </noscript>
-`}}>{
-        
-    }
-</script>
-
- 
+                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
                 </footer>
 
             </div>
