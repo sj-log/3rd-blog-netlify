@@ -110,6 +110,7 @@
         }
 
         .posts {
+
             h1 {
                 font-family : 'La Belle Aurore', cursive;
                 font-size: $goldenRate*2.0;
@@ -120,8 +121,8 @@
                 position: absolute;
                 width: 5%;
                 display: block;
-                left: 45%;
-                border-bottom: 0.5px solid grey;
+                left: 47.5%;
+                border-bottom: 0.5px solid rgb(180, 178, 178);
             }
            
             .post-link-frame:hover {
@@ -185,6 +186,10 @@
         margin: 0 auto;
         width: 50vw;
 
+        iframe {
+            // keep Youtube video in width
+            width: 100%;
+        }
         p, li, code, table {
             font-family: 'RIDIBatang';
             color : rgb(98, 98, 98) ;

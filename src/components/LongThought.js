@@ -73,7 +73,7 @@ class LongThought extends React.Component {
                     <h1>{frontmatter.title}</h1>
                     <span>{frontmatter.date}</span>
                 </header>
-                <MarkdownReact source={md}></MarkdownReact>
+                <MarkdownReact source={md} escapeHtml={false}></MarkdownReact>
 
                 <footer>
                 <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
