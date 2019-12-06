@@ -20,18 +20,20 @@ export default class Application extends React.Component {
                 <link rel="canonical" href="http://mysite.com/example"/>
 
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                
+                
                 {/* Google Search Console */}
                 <meta name="google-site-verification" content="WEsHUyxBDviVZl97dxUfxTM97JitX-6kDwmSPRE7jMA" />
               
                 {/* Google Adsense */}
-<script>
-    {` (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-9404465753932962",
-          enable_page_level_ads: true
-     });`}
-</script>
+                <script>
+                    {` (adsbygoogle = window.adsbygoogle || []).push({
+                        google_ad_client: "ca-pub-9404465753932962",
+                        enable_page_level_ads: true
+                    });`}
+                </script>
 
-             {/* Google Analytics */}
+              {/* Google Analytics */}
                 <script
                     async="async"
                     src="https://www.googletagmanager.com/gtag/js?id=UA-116676814-1"></script>
