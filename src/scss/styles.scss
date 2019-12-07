@@ -1,20 +1,40 @@
 @import "variables.scss";
 @font-face {
     font-family: 'kimku';
-    src: url('kimku.ttf') format('truetype'); 
+    src: url('kimku.ttf') format('truetype');
 }
 @font-face {
-    font-family : 'A펜글씨B';
-    src:url('A펜글씨B.TTF') format('truetype');
+    font-family: 'A펜글씨B';
+    src: url('A펜글씨B.TTF') format('truetype');
 }
 @font-face {
-    font-family : 'jeongum';
-    src:url('jeongum.ttf') format('truetype');
+    font-family: 'jeongum';
+    src: url('jeongum.ttf') format('truetype');
 }
-@font-face { font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'Chosunilbo_myungjo'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'Arita-buri-SemiBold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff'); font-weight: normal; font-style: normal; }
-@font-face { font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Arita-buri-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .logo {
     @include logo;
 }
@@ -36,19 +56,18 @@
     .application {
         display: none;
     }
-
-    *>a:not(.logo) {
+    * > a:not(.logo) {
         text-decoration: none;
         color: black;
     }
 
     .body-section {
-        width: 50%;
-
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60% 40%;
         .img-section {
-            width: 100%;
             overflow: hidden;
-            
+
             img {
                 width: 100%;
                 object-fit: cover;
@@ -80,14 +99,14 @@
             padding: 0;
             display: table;
             // vertically middle - align item:center
-      
+
             justify-content: flex-end;
         }
 
         li {
-            font-size:$goldenRate*1.5;
+            font-size: $goldenRate*1.5;
             padding: $goldenRate/2;
-            font-family: 'La Belle Aurore', cursive;;
+            font-family: 'La Belle Aurore', cursive;
             display: table-cell;
             vertical-align: middle;
         }
@@ -112,11 +131,11 @@
         .posts {
 
             h1 {
-                font-family : 'La Belle Aurore', cursive;
+                font-family: 'La Belle Aurore', cursive;
                 font-size: $goldenRate*2.0;
                 font-weight: 300;
             }
-            h1::after{
+            h1::after {
                 content: "";
                 position: absolute;
                 width: 5%;
@@ -124,7 +143,6 @@
                 left: 47.5%;
                 border-bottom: 0.5px solid rgb(180, 178, 178);
             }
-           
             .post-link-frame:hover {
                 transform: translateX(10px);
             }
@@ -139,7 +157,7 @@
                 // box-shadow: 0px 0px 2px 0px $subInfoColor;
 
                 img {
-                    
+
                     display: none;
                     width: $goldenRate * 7;
                     background-repeat: no-repeat;
@@ -181,7 +199,7 @@
 
     .post-card {
         line-height: 22pt;
-        letter-spacing: .8px;
+        letter-spacing: 0.8px;
         text-align: left;
         margin: 0 auto;
         width: 50vw;
@@ -190,20 +208,25 @@
             // keep Youtube video in width
             width: 100%;
         }
-        p, li, code, table {
+        code,
+        li,
+        p,
+        table {
             font-family: 'RIDIBatang';
-            color : rgb(98, 98, 98) ;
+            color: rgb(98, 98, 98);
         }
-        strong{
+        strong {
             font-family: 'RIDIBatang';
-            color : black;
+            color: black;
         }
 
-        h1, h2,h3 {
+        h1,
+        h2,
+        h3 {
             font-family: 'A펜글씨B';
         }
-        h1{
-            line-height:40px;
+        h1 {
+            line-height: 40px;
         }
         img {
             border-radius: 2%;
@@ -224,14 +247,11 @@
             width: 1px;
             height: 9px;
         }
-
-
         pre:hover::-webkit-scrollbar-thumb {
             box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
             -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 
         }
-
 
         .badge {
             box-sizing: content-box;
