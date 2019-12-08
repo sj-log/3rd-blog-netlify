@@ -21,7 +21,7 @@ import './scss/styles.scss';
 import { createBrowserHistory } from "history";
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-116676814-1', { debug: true });
+ReactGA.initialize('UA-116676814-1');
 
 const history = createBrowserHistory();
 history.listen(location => {

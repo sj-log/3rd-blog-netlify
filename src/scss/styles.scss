@@ -64,10 +64,11 @@
     .body-section {
         width: 100%;
         display: grid;
-        grid-template-columns: 60% 40%;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
         .img-section {
             overflow: hidden;
-
+            width: 80%;
             img {
                 width: 100%;
                 object-fit: cover;
@@ -78,6 +79,9 @@
         .text-section {
             margin: auto 0;
             display: inline-block;
+            font-family: 'La Belle Aurore', cursive;
+            font-size: $goldenRate*1.5;
+
 
             .read-more {
                 border: 1px solid black;
