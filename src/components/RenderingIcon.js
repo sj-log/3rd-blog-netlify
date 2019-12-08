@@ -1,6 +1,5 @@
 import React from 'react';
-import {BarLoader, HashLoader,FadeLoader
-    ,ClimbingBoxLoader} from 'react-spinners'
+import {BarLoader } from 'react-spinners'
 import { css } from '@emotion/core';
 
 const override = css`

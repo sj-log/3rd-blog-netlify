@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import * as matter from 'gray-matter';
 import RenderingIcon from './RenderingIcon'
 // import CategorizedPosts from './CategorizedPosts'
-import qs from 'query-string';
 
 const importAll = (r) => r
     .keys()
@@ -76,9 +75,9 @@ export default class LongThoughts extends React.Component {
                 var frontmatter = matter(fr).data
 
                 // get query-string the category object
-                var lsCategory = qs
-                    .parse(window.location.search)
-                    .category
+                // var lsCategory = qs
+                //     .parse(window.location.search)
+                //     .category
 
                 // if (frontmatter.category === lsCategory || (frontmatter.category !==
                 // undefined && frontmatter.category.includes(lsCategory))) {     // if this
@@ -157,7 +156,7 @@ export default class LongThoughts extends React.Component {
                     <h1>Book</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Book' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category === 'Book' && post.frontmatter.status !== 'draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -177,7 +176,7 @@ export default class LongThoughts extends React.Component {
                     <h1>Essay</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Essay' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category === 'Essay' && post.frontmatter.status !== 'draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -196,7 +195,7 @@ export default class LongThoughts extends React.Component {
                     <h1>TIL</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'TIL' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category === 'TIL' && post.frontmatter.status !== 'draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -214,7 +213,7 @@ export default class LongThoughts extends React.Component {
 }<h1>Marketing</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Marketing' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category === 'Marketing' && post.frontmatter.status !== 'draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -232,7 +231,7 @@ export default class LongThoughts extends React.Component {
 }<h1>Rescue</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Wholesome.ee' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category === 'Wholesome.ee' && post.frontmatter.status !=='draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -251,7 +250,7 @@ export default class LongThoughts extends React.Component {
                     <h1>Coding</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Coding' || post.frontmatter.category == 'coding'  && post.frontmatter.status != 'draft') {
+                        if ((post.frontmatter.category === 'Coding' || post.frontmatter.category === 'coding' ) && post.frontmatter.status !=='draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -270,7 +269,7 @@ export default class LongThoughts extends React.Component {
                     <h1>Bali Life</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Bali Life' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category==='Bali Life' && post.frontmatter.status !=='draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"
@@ -289,7 +288,7 @@ export default class LongThoughts extends React.Component {
                     <h1>Productivity</h1>
                     {posts.map((post, i) => {
 
-                        if (post.frontmatter.category == 'Productivity' && post.frontmatter.status != 'draft') {
+                        if (post.frontmatter.category==='Productivity' && post.frontmatter.status !=='draft') {
                             return <div className='post-link-frame' key={i}>
                                 <Link
                                     className="title-wrapper"

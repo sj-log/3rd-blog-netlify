@@ -1,24 +1,46 @@
 import React from 'react';
-import './App.css';
+
+// components
 import Helmet from './components/Helmet';
 import Intro from './components/Intro';
 import Nav from './components/Nav';
 import LongThoughts from './components/LongThoughts';
 import LongThought from './components/LongThought';
-
 import About from './components/About';
-import './scss/styles.scss';
 import SmallThought from './components/SmallThought';
-import CategorizedPosts from './components/CategorizedPosts';
+
+// routing
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+
+// css
+import './App.css';
+import './scss/styles.scss';
+
+// google analytics components
+import { createBrowserHistory } from "history";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-116676814-1', { debug: true });
+
+const history = createBrowserHistory();
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
 
 
 export default class App extends React.Component {
 
+    componentDidMount(){
+        ReactGA.pageview(window.location.pathname);
+    }
+
+
     render() {
 
         return (
-            <Router>
+            <Router history={history}>
                 <div className="App">
                     <header className="header">
                         <Helmet/>
