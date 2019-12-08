@@ -15,7 +15,7 @@ const markdownFiles = importAll(require.context('../posts', false, /\.md$/))
 export default class LongThoughts extends React.Component {
     constructor(props) {
         super(props)
-        console.log('0 constructor')
+        // console.log('0 constructor')
 
         this.state = {
             loading: true,
@@ -312,14 +312,14 @@ export default class LongThoughts extends React.Component {
     }
 
     componentDidMount() {
-        console.log('2 componentDidMount')
+      // console.log('2 componentDidMount')
 
         this.postsProc()
 
     }
 
     render() {
-        console.log('1 render')
+      // console.log('1 render')
 
         const {posts, categories, loading} = this.state
 
