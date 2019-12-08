@@ -1,5 +1,4 @@
 {
-  "name": "sj-log",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -36,7 +35,7 @@
     "start": "cross-env NODE_PATH=src react-scripts start",
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "cross-env NODE_PATH=src react-scripts test",
-    "eject": "cross-env NODE_PATH=src react-scripts eject",
+    "eject": "cross-env NODE_PATH=src react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

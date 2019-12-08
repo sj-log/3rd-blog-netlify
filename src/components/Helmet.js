@@ -18,7 +18,6 @@ export default class Application extends React.Component {
                     <link rel="shortcut icon" href="/PUBLIC_URL//favicon.ico"/>
                     <link rel="manifest" href="/PUBLIC_URL/manifest.json"/>
                     <link rel="apple-touch-icon" href="logo192.png"/>
-                    <link rel="canonical" href="http://mysite.com/example"/>
 
                     <script
                         async
