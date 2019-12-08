@@ -5,7 +5,7 @@ export default class Application extends React.Component {
     render() {
         return (
             <div className="application">
-                <Helmet defaultTitle="log" titleTemplate="%s | Sj">
+                <Helmet defaultTitle="log" titleTemplate="%s | Sj" meta={}>
 
                     <meta charSet="utf-8"/>
                     <meta name="description" content="Sj Blog Article"/>
@@ -23,9 +23,10 @@ export default class Application extends React.Component {
                         async
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-{/* google search console verification tag */}
+{/* search console verification tag */}
 <meta name="google-site-verification" content="WEsHUyxBDviVZl97dxUfxTM97JitX-6kDwmSPRE7jMA" />
 
+<meta name="naver-site-verification" content="3fe947b693663b49943a1272b8cb8ae6d2e5082f"/>
 
                   
 {/* typed js */}
