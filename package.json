@@ -1,5 +1,4 @@
 {
-  "homepage": "https://sj-log.github.io",
   "name": "sj-log",
   "version": "0.1.0",
   "private": true,
@@ -38,8 +37,6 @@
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "cross-env NODE_PATH=src react-scripts test",
     "eject": "cross-env NODE_PATH=src react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
