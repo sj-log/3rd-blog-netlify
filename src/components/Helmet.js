@@ -23,6 +23,10 @@ export default class Application extends React.Component {
                         async
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+{/* google search console verification tag */}
+<meta name="google-site-verification" content="WEsHUyxBDviVZl97dxUfxTM97JitX-6kDwmSPRE7jMA" />
+
+
                   
 {/* typed js */}
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
