@@ -1,5 +1,6 @@
 {
-  "name": "react-blog",
+  "homepage": "https://sj-log.github.io",
+  "name": "sj-log",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "front-matter": "^3.0.2",
     "frontmatter-markdown-loader": "^2.1.0",
     "fs": "^0.0.1-security",
+    "gh-pages": "^2.1.1",
     "gray-matter": "^4.0.2",
     "history": "^4.10.1",
     "markdown-to-jsx": "^6.10.3",
@@ -35,7 +37,9 @@
     "start": "cross-env NODE_PATH=src react-scripts start",
     "build": "cross-env NODE_PATH=src react-scripts build",
     "test": "cross-env NODE_PATH=src react-scripts test",
-    "eject": "cross-env NODE_PATH=src react-scripts eject"
+    "eject": "cross-env NODE_PATH=src react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
