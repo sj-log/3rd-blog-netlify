@@ -28,13 +28,14 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.1",
     "react-scripts": "3.1.2",
+    "react-snapshot": "^1.3.0",
     "react-spinners": "^0.6.1",
     "react-typed": "^1.2.0",
     "yaml-front-matter": "^4.0.0"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts build",
+    "build": "cross-env NODE_PATH=src react-scripts build && react-snapshot",
     "test": "cross-env NODE_PATH=src react-scripts test",
     "eject": "cross-env NODE_PATH=src react-scripts eject"
   },

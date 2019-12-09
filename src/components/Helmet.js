@@ -12,6 +12,10 @@ export default class Application extends React.Component {
                     <meta property="og:type" content="article"/>
                     <meta name="viewport" content="width=device-width, initial-scale=1"/>
                     <meta name="theme-color" content="#000000"/>
+{/* search console verification tag */}
+<meta name="google-site-verification" content="WEsHUyxBDviVZl97dxUfxTM97JitX-6kDwmSPRE7jMA" />
+<meta name="naver-site-verification" content="3fe947b693663b49943a1272b8cb8ae6d2e5082f"/>
+
 
                     <title itemProp="name" lang="en">{`Log`}</title>
 
@@ -22,11 +26,6 @@ export default class Application extends React.Component {
                     <script
                         async
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-{/* search console verification tag */}
-<meta name="google-site-verification" content="WEsHUyxBDviVZl97dxUfxTM97JitX-6kDwmSPRE7jMA" />
-
-<meta name="naver-site-verification" content="3fe947b693663b49943a1272b8cb8ae6d2e5082f"/>
 
                   
 {/* typed js */}

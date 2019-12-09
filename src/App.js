@@ -12,7 +12,6 @@ import SmallThought from './components/SmallThought';
 // routing
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-
 // css
 import './App.css';
 import './scss/styles.scss';
