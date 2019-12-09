@@ -58,4 +58,10 @@
     "@babel/preset-env": "^7.6.2",
     "@fortawesome/fontawesome-free": "^5.11.2"
   }
+  ,
+  "reactSnapshot" : {
+    "include": [
+      "/log/**"
+    ]
+  }
 }

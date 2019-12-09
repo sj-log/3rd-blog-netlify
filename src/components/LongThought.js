@@ -76,6 +76,7 @@ class LongThought extends React.Component {
                 <MarkdownReact source={md} escapeHtml={false}></MarkdownReact>
 
                 <footer>
+                    <hr className="divider"></hr>
                 <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
                 </footer>
 
