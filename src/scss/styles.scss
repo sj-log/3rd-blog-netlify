@@ -145,7 +145,7 @@
                 content: "";
                 position: absolute;
                 transform: rotate(125deg);
-                width: 2.5%;
+                width: 1.25%;
                 left: 12.5%;
                 display: block;
                 border-bottom: 0.5px solid #b4b2b2;
@@ -178,15 +178,25 @@
                     color: grey;
                 }
 
-                .post-title {
-                    margin: $goldenRate/2.5;
+                .title-wrapper{
 
-                    text-align: left;
-                    font-weight: 400;
-                    font-family: 'RIDIBatang';
-                    display: inline-block;
+                    .post-title {
+                        transition: all ease-in-out 0.3s;
 
+                        margin: $goldenRate/2.5;
+                        color: grey;
+                        text-align: left;
+                        font-weight: 400;
+                        font-family: 'RIDIBatang';
+                        display: inline-block;
+                        
+                        &:hover{
+
+                            color: black;
+                        }
+                    }
                 }
+                
             }
         }
     }
@@ -219,14 +229,14 @@
                 color: grey;
                 content: "\201C";
                 display: block;
-                text-align: center;
+                text-align: left;
                 font-size: $goldenRate*3.5;
                     
             }
             p::after{
                 content:'\201D';
                 display: block;
-                text-align: center;
+                text-align: right;
                 color: grey;
                 margin-top: $goldenRate*2;
                 font-size: $goldenRate*3.5;
@@ -235,8 +245,7 @@
         }
 
         .divider {
-
-            margin: $goldenRate*3;
+            margin: $goldenRate*5;
             width: 2.5%;
             display: block;
             position: relative;
@@ -273,14 +282,13 @@
         h1,
         h2,
         h3 {
-            margin-bottom:$goldenRate*3;
+            margin-top:$goldenRate*2;
             font-family: 'A펜글씨B';
         }
         h1 {
             line-height: 40px;
         }
         img {
-            border-radius: 2%;
             position: relative;
             width: 50vw;
         }
