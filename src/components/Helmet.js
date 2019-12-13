@@ -27,6 +27,14 @@ export default class Application extends React.Component {
                         async
                         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+{/* Google adsense installed */}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>{`
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-9404465753932962",
+          enable_page_level_ads: true
+     });`}
+</script>
                   
 {/* typed js */}
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>

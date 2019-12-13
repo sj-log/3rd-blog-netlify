@@ -152,7 +152,26 @@ export default class LongThoughts extends React.Component {
 
                 {/* posts call through mapping  */}
                 <article className="posts">
+                <h1>Poem</h1>
+                    {posts.map((post, i) => {
 
+                        if (post.frontmatter.category === 'Poem' && post.frontmatter.status !== 'draft') {
+                            return <div className='post-link-frame' key={i}>
+                                <Link
+                                    className="title-wrapper"
+                                    to={post
+                                    .path
+                                    .replace(/ /gi, "-")}
+                                    key={i}>
+
+                                    <span className='post-title'>{post.title}</span>
+
+                                </Link>
+                            </div>
+
+                        }
+                    })
+}
                     <h1>Book</h1>
                     {posts.map((post, i) => {
 
