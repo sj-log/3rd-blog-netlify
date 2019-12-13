@@ -6,8 +6,6 @@ import Intro from './components/Intro';
 import Nav from './components/Nav';
 import LongThoughts from './components/LongThoughts';
 import LongThought from './components/LongThought';
-import About from './components/About';
-import SmallThought from './components/SmallThought';
 
 // routing
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -52,10 +50,13 @@ export default class App extends React.Component {
                         <Route exact={true} path="/">
                             <Intro></Intro>
                         </Route>
-                        <Route
-                            path="/log" render={props => <LongThoughts {...props}/>}></Route>
+                        {/* <Route
+                            path="/log" render={props => <LongThoughts {...props}/>}></Route> */}
 
-                        <Route exact={true} path="/:title" render={props => <LongThought {...props}/>}></Route>
+<Route
+                            path="/log" component={props => <LongThoughts {...props}/>}></Route>
+
+                        <Route exact={true} path="/:title" component={props => <LongThought {...props}/>}></Route>
 
                     </Switch>
                 </div>
