@@ -52,13 +52,6 @@ export default class App extends React.Component {
                         <Route exact={true} path="/">
                             <Intro></Intro>
                         </Route>
-                        <Route path="/about">
-                            <About></About>
-                        </Route>
-                        <Route path="/small-thought">
-                            <SmallThought></SmallThought>
-                        </Route>
-
                         <Route
                             path="/log" render={props => <LongThoughts {...props}/>}></Route>
 

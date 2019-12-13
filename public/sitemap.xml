@@ -3,5 +3,5 @@
 <url> <loc>https://sj-log.netlify.com/</loc> </url>
 <url> <loc>https://sj-log.netlify.com/</loc> </url>
 <url> <loc>https://sj-log.netlify.com/log</loc> </url>
-<url> <loc>https://sj-log.netlify.com/log/:title</loc> </url>
+<url> <loc>https://sj-log.netlify.com/:title</loc> </url>
 </urlset>
