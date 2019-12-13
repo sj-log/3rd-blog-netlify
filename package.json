@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts build && react-snapshot",
+    "build": "cross-env NODE_PATH=src react-scripts build && react-snapshot && echo '/*    /index.html   200' > build/_redirects",
     "test": "cross-env NODE_PATH=src react-scripts test",
     "eject": "cross-env NODE_PATH=src react-scripts eject",
     "sitemap": "babel-node src/sitemap/sitemap-generator.js",

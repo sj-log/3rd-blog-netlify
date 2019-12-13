@@ -1,6 +1,8 @@
 import React from 'react'
 import * as matter from 'gray-matter';
 import Disqus from 'disqus-react';
+import {Helmet} from "react-helmet";
+
 
 // remark-react libraries 3
 import MarkdownReact from 'react-markdown';
@@ -69,6 +71,12 @@ class LongThought extends React.Component {
         return (
 
             <div className='post-card'>
+                {/* dynamical metatag excepts, thumbnail */}
+                <Helmet>
+                    <title>{frontmatter.title}</title>
+                    <meta name="description" content={md} />
+                    <meta name="og:image" content={frontmatter.thumbnail} />
+                </Helmet>
                 <header>
                     <h1>{frontmatter.title}</h1>
                     <span>{frontmatter.date}</span>
