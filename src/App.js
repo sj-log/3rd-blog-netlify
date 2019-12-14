@@ -53,7 +53,7 @@ export default class App extends React.Component {
                         {/* <Route
                             path="/log" render={props => <LongThoughts {...props}/>}></Route> */}
 
-<Route
+                        <Route
                             path="/log" component={props => <LongThoughts {...props}/>}></Route>
 
                         <Route exact={true} path="/:title" component={props => <LongThought {...props}/>}></Route>
