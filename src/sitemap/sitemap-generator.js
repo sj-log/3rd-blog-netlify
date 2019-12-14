@@ -6,6 +6,9 @@ require("babel-register")({
     return null;
   };
   
+  require.extensions['.css'] = function () {
+    return null;
+  };
   require.extensions['.png'] = function () {
     return null;
   };

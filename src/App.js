@@ -15,25 +15,25 @@ import './App.css';
 import './scss/styles.scss';
 
 // google analytics components
-import { createBrowserHistory } from "history";
+import {createBrowserHistory} from "history";
 import ReactGA from 'react-ga';
+import window from 'global/window';
+
 
 ReactGA.initialize('UA-116676814-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 const history = createBrowserHistory();
 history.listen(location => {
-  ReactGA.set({ page: location.pathname });
-  ReactGA.pageview(location.pathname);
+    ReactGA.set({page: location.pathname});
+    ReactGA.pageview(location.pathname);
 });
-
 
 export default class App extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         ReactGA.pageview(window.location.pathname);
     }
-
 
     render() {
 
@@ -42,7 +42,7 @@ export default class App extends React.Component {
                 <div className="App">
                     <header className="header">
                         <Helmet/>
-               
+
                         <Nav/>
                     </header>
 
@@ -53,10 +53,12 @@ export default class App extends React.Component {
                         {/* <Route
                             path="/log" render={props => <LongThoughts {...props}/>}></Route> */}
 
-                        <Route
-                            path="/log" component={props => <LongThoughts {...props}/>}></Route>
+                        <Route path="/log" component={props => <LongThoughts {...props}/>}></Route>
 
-                        <Route exact={true} path="/:title" component={props => <LongThought {...props}/>}></Route>
+                        <Route
+                            exact={true}
+                            path="/:title"
+                            component={props => <LongThought {...props}/>}></Route>
 
                     </Switch>
                 </div>
