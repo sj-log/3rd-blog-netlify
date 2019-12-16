@@ -2,7 +2,24 @@ require("babel-register")({
   presets: ["es2015", "react"]
 });
  
-const router = require("./sitemap-generator.js").default;
+require.extensions['.scss'] = function () {
+  return null;
+};
+
+require.extensions['.png'] = function () {
+  return null;
+};
+
+require.extensions['.svg'] = function () {
+  return null;
+};
+
+require.extensions['.jpg'] = function () {
+  return null;
+};
+
+
+const router = require("../Route").default;
 const Sitemap = require("react-router-sitemap").default;
 
 function generateSitemap() {
