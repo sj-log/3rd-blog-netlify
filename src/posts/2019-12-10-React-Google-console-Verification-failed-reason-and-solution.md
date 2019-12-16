@@ -1,5 +1,6 @@
 ---
 category : Coding
+status : draft
 ---
 
 ReactJs로 만든 블로그가 Google Search Console에 인식되지 않는 주관적인 이유

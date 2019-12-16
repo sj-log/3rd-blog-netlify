@@ -122,7 +122,7 @@ export default class LongThoughts extends React.Component {
                         uniq.add(el)
                         break
                 }
-
+                return null
             })
 
             var setToArray = Array.from(uniq)

@@ -9,7 +9,7 @@ var Intro = () => {
                 <img
                     id='carousel-img'
                     alt="Sj Vipassana Study"
-                    src='https://scontent-sin2-1.cdninstagram.com/vp/dce8f3d6e157f4081f51751074023a11/5E278B55/t51.2885-15/e35/45350830_808270686177244_7067872797703318700_n.jpg?_nc_ht=scontent-sin2-1.cdninstagram.com&_nc_cat=104'></img>
+                    src='https://user-images.githubusercontent.com/35059428/70877639-abf15f00-2001-11ea-8f29-528abe924e1c.png'></img>
             </section>
             <aside className="text-section">
             <Typed

@@ -1,3 +1,6 @@
 {
-    "plugins": ["transform-require-context"]
-  }
+  "presets": [
+    "react",
+    "es2015"
+  ]
+}

@@ -1,7 +1,10 @@
 import React from 'react';
-import App from '../App'
-
-export default(<div>
-<App/>
-</div>
+import { Route } from 'react-router';
+ 
+export default (
+    <Route>
+	<Route path='/' />
+	<Route path='/log' />
+    <Route path=':title' />
+    </Route>
 );
